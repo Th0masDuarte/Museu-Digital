@@ -8,13 +8,52 @@ body {
 
 .cabecalho {
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/ /* removido para permitir posicionamento absoluto da logo */
     align-items: center;
+    text-align: center;
     background: #111;
     color: #fff;
-    height: 80px;
+    height: 100px;
     width: 100%;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: 0.5s;
+    position: relative; /* necessário para posicionar .logo e .fib */
+
+}
+
+.logo {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.logo img {
+    display: block;
+    height: 190px;
+    width: 200px;
+    margin-top: 40px;
+}
+
+.fib {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    background-color: white;
+    color: black;
+    font-size: 2rem;
+    width: auto;
+    padding: 8px 16px;
+    border-radius: 15px;
+
+}
+.fib:hover {
+    text-decoration: underline;
 }
 
 .fundo {
@@ -135,21 +174,7 @@ p:hover {
 }
 /* ...outros estilos do index... */
 
-.cabecalho h1 {
-    color: #222;
-    font-size: 2.2rem;
-    text-align: center;
-    margin: 24px 0 16px 0;
-    border: 3px solid #111;
-    border-radius: 18px;
-    padding: 12px 0;
-    background: #fff;
-    transition: background 0.5s, color 0.5s;
-}
 
-.cabecalho h1:hover {
-    text-decoration: underline;
-}
 
 .conteudo {
     max-width: 800px;
